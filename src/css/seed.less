@@ -1,0 +1,141 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@import "seattletimes";
+
+body {
+  font-family: @df-sans;
+  font-size: 16px;
+}
+
+.outmost {
+  border-top: 1px solid @df-border-gray;
+  border-bottom: 1px solid @df-border-gray;
+  padding: 20px 0;
+  margin: 20px auto;
+  max-width: 630px;
+}
+
+@aspect-ratio: 7/10;
+@legend-length: 8;
+
+.title {
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+  padding-bottom: 5px;
+}
+
+.chatter {
+  text-align: center;
+  padding-bottom: 15px;
+}
+
+.aspect-ratio-outer {
+  margin: auto;
+  position: relative;
+
+  @media @mobile {
+    width: 100%;
+    padding: 0;
+  }
+
+  .aspect-ratio-inner {
+    padding-bottom: percentage(@aspect-ratio);
+    position: relative;
+  }
+
+  leaflet-map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    &:not([ready]) {
+      display: none;
+    }
+  }
+}
+
+div.leaflet-popup-content{
+  margin: 10px 5px;
+  width:auto;
+  max-width: 240px;
+  font-family: @df-sans;
+
+  .line {
+    padding-bottom: 3px;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+}
+
+div.leaflet-popup-content-wrapper {
+  border-radius: 3px;
+  max-width: 240px;
+  box-shadow: 0 1px 14px rgba(0,0,0,0.30);
+  padding: 4px 20px;
+}
+
+.source {
+  font-size: 11.5px;
+  color: #999;
+
+  .credit {
+    font-size: 95%;
+  }
+}
+
+aside.legend {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  padding: 6px 8px;
+  background: white;
+  background: rgba(255,255,255,0.8);
+  border-radius: 5px;
+  width: 100%;
+
+  h1 {
+    padding: 0;
+    text-align: left;
+    font-size: 15px;
+    line-height: 1.2;
+    margin: 8px 0 2px 0;
+  }
+
+  .scale-container {
+    position: relative;
+    padding-bottom: 30px;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .scale {
+    display: inline-block;
+    height: 10px;
+    width: 100%;
+    position: relative;
+    background: linear-gradient(to right,#1b7837,#5aae61,#a6dba0,#d9f0d3,#e7d4e8,#c2a5cf,#9970ab,#762a83);
+  }
+  .min, .max {
+    position: absolute;
+    top: 20px;
+    padding-top: 2px;
+    font-size: 13px;
+
+    @media @mobile {
+      font-size: 12px;
+    }
+  }
+  .max {
+    right: 0;
+  }
+}

@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+  <head>
+    <title><%= json.project.title %></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <%= t.include("partials/_head.html") %>
+  </head>
+  <body>
+
+    <responsive-child>
+      <div class="outmost">
+        <div class="title">Single vs Married Without Kids</div>
+        <div class="chatter">Chatter goes here</div>
+
+        <div class="aspect-ratio-outer">
+          <div class="aspect-ratio-inner">
+            <leaflet-map lat="47.57" lng="-122.24" zoom=10>
+              <tile-layer layer="cartoPositron"></tile-layer>
+            </leaflet-map>
+          </div>
+        </div>
+
+        <aside class="legend">
+          <h1>More households containing people:</h1>
+          <div class="scale-container">
+            <div class="min"><i class="fa fa-long-arrow-left"></i> Living alone</div><div class="scale"></div><div class="max">Married without kids under 18 <i class="fa fa-long-arrow-right"></i></div>
+          </div>
+
+          <div class="source">
+            <em>Source: U.S. Census Bureau</em>
+            <div class="credit">AUDREY CARLSEN / THE SEATTLE TIMES</div>
+          </div>
+        </aside>
+
+      </div>
+    </responsive-child>
+
+    <script src="app.js" async></script>
+    <% if (json.project.production) { %>
+    <%= !json.project.embedded ? t.include("partials/_foot.html") : "" %>
+    <%= t.include("partials/_workHere.html") %>
+    <% } %>
+  </body>
+</html>
