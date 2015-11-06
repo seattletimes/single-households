@@ -1,3 +1,9 @@
-<div class="line">Living alone: <strong>{{single}}</strong></div>
-<div class="line">Married without kids under 18: <strong>{{married}}</strong></div>
+{{#top}}
+  <div class="line">Married without kids under 18: <strong>{{married}}</strong></div>
+  <div class="line">Living alone: <strong>{{single}}</strong></div>
+{{/top}}
+{{^top}}
+  <div class="line">Living alone: <strong>{{single}}</strong></div>
+  <div class="line">Married without kids under 18: <strong>{{married}}</strong></div>
+{{/top}}
 {{#ratio}}<div class="line">Ratio: <strong>{{ratio}}</strong></div>{{/ratio}}

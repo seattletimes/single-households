@@ -25,16 +25,20 @@ var onEachFeature = function(feature, layer) {
 
   if (single == 0) {
     var ratio = null;
+    var top = true;
   } else if (single > married) {
     var ratio = Math.round(single/married) + " to 1";
+    var top = false;
   } else {
-    var ratio = "1 to " + Math.round(married/single);
+    var ratio = Math.round(married/single) + " to 1";
+    var top = true;
   }
 
   layer.bindPopup(ich.popupTemplate({
     single: commafy(single),
     married: commafy(married),
-    ratio: ratio
+    ratio: ratio,
+    top: top
   }));
   layer.on({
     popupopen: function(e) {
