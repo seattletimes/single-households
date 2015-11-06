@@ -68,14 +68,14 @@ function commafy( num ) {
 }
 
 function getColor(d) {
-  return d > 5 ? '#1b7837' :
-         d > 3 ? '#5aae61' :
-         d > 2 ? '#a6dba0' :
-         d > 1  ? '#d9f0d3' :
-         d >= 1/2  ? '#e7d4e8' :
-         d >= 1/3  ? '#c2a5cf' :
-         d >= 1/5  ? '#9970ab' :
-                   '#762a83' ;
+  return d > 5 ? '#762a83' :
+         d > 3 ? '#9970ab' :
+         d > 2 ? '#c2a5cf' :
+         d > 1  ? '#e7d4e8' :
+         d >= 1/2  ? '#d9f0d3' :
+         d >= 1/3  ? '#a6dba0' :
+         d >= 1/5  ? '#5aae61' :
+                   '#1b7837' ;
 }
 
 function style(feature) {
